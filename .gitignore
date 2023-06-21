@@ -1,0 +1,8 @@
+auto-save-list/
+etc/
+straight/
+tree-sitter/
+var/
+
+*~
+.#*
