@@ -3,6 +3,7 @@ etc/
 straight/
 tree-sitter/
 var/
+tmp/
 
 *~
 .#*
