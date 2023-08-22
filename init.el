@@ -11,6 +11,7 @@
 (setq-default cursor-in-non-selected-windows nil)
 
 (setq js-indent-level 2)
+(setq-default indent-tabs-mode nil)
 
 ;(if (string-equal (system-name) "icewing")
 ;  (set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular))
@@ -19,6 +20,10 @@
 
 ;(setq backup-directory-alist `(("." . "~/.cache/emacs/backups")))
 ;(setq auto-save-file-name-transforms `(("." "~/.cache/emacs/autosaves/" t)))
+
+(setq create-lockfiles nil)
+
+(setq projectile-indexing-method 'hybrid)
 
 ;; bootstrap straight.el
 (setq straight-use-package-by-default t)
@@ -150,6 +155,7 @@
     "po" '(projectile-find-other-file :which-key "projectile-find-other-file")
     "pi" '(projectile-invalidate-cache :which-key "projectile-invalidate-cache")
     "pf" '(projectile-find-file :which-key "Projectile find file")
+    "pK" '(projectile-kill-buffers :which-key "Projectile kill buffers")
 
     ;; window
     "w" '(:ignore t :which-key "Window")
