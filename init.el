@@ -8,6 +8,8 @@
 (setq user-full-name "Nat Tuck"
       user-mail-address "nat@ferrus.net")
 
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
+
 (setq-default cursor-in-non-selected-windows nil)
 
 (setq js-indent-level 2)
