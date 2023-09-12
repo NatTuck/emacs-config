@@ -24,7 +24,6 @@
              (modify-syntax-entry ?@ "< b" 
                                   java-mode-syntax-table)))
 
-
 ;(if (string-equal (system-name) "icewing")
 ;  (set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular))
 
