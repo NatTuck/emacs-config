@@ -8,12 +8,22 @@
 (setq user-full-name "Nat Tuck"
       user-mail-address "nat@ferrus.net")
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
-
 (setq-default cursor-in-non-selected-windows nil)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
 
 (setq js-indent-level 2)
 (setq-default indent-tabs-mode nil)
+
+; https://lists.gnu.org/archive/html/help-gnu-emacs/2011-04/msg00262.html
+(add-hook 'java-mode-hook
+          '(lambda ()
+             "Treat Java 1.5 @-style annotations as comments."
+             (setq c-comment-start-regexp 
+                   "\\(@\\|/\\(/\\|[*][*]?\\)\\)")
+             (modify-syntax-entry ?@ "< b" 
+                                  java-mode-syntax-table)))
+
 
 ;(if (string-equal (system-name) "icewing")
 ;  (set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular))
