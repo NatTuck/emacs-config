@@ -8,9 +8,9 @@
 (setq user-full-name "Nat Tuck"
       user-mail-address "nat@ferrus.net")
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
-
 (setq-default cursor-in-non-selected-windows nil)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
 
 (setq js-indent-level 2)
 (setq-default indent-tabs-mode nil)
@@ -25,10 +25,10 @@
                                   java-mode-syntax-table)
              (c-set-offset 'arglist-intro '+)))
 
-;(if (string-equal (system-name) "icewing")
-;  (set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular))
-
 (set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular)
+
+(if (string-equal (system-name) "psyduck")
+  (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
 
 ;(setq backup-directory-alist `(("." . "~/.cache/emacs/backups")))
 ;(setq auto-save-file-name-transforms `(("." "~/.cache/emacs/autosaves/" t)))
