@@ -22,7 +22,8 @@
              (setq c-comment-start-regexp 
                    "\\(@\\|/\\(/\\|[*][*]?\\)\\)")
              (modify-syntax-entry ?@ "< b"
-                                  java-mode-syntax-table)))
+                                  java-mode-syntax-table)
+             (c-set-offset 'arglist-intro '+)))
 
 ;(if (string-equal (system-name) "icewing")
 ;  (set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular))
