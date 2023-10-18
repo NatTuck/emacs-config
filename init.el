@@ -14,6 +14,7 @@
 
 (setq js-indent-level 2)
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 4) 
 
 ; https://lists.gnu.org/archive/html/help-gnu-emacs/2011-04/msg00262.html
 (add-hook 'java-mode-hook
