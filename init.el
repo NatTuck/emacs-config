@@ -26,6 +26,7 @@
                                   java-mode-syntax-table)
              (c-set-offset 'arglist-intro '+)))
 
+
 (set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular)
 
 (if (string-equal (system-name) "psyduck")
@@ -55,6 +56,21 @@
 
 (straight-use-package 'use-package)
 (setq use-package-always-ensure t)
+
+(use-package mmm-mode)
+
+(require 'mmm-auto)
+(setq mmm-global-mode 'maybe)
+(mmm-add-classes
+ '((java-text-block
+    :submode fundamental-mode
+    :front ".+\"\"\"$"
+    :back ".*\"\"\".*"
+    :face mmm-code-submode-face
+    )))
+(mmm-add-mode-ext-class 'java-mode "\\.java$" 'java-text-block)
+
+
 
 (use-package no-littering
   :config
