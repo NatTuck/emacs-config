@@ -360,6 +360,8 @@
 
 (use-package elixir-ts-mode)
 
+(use-package kotlin-ts-mode)
+
 ;:(use-package tramp)
 
 
