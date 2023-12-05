@@ -27,10 +27,13 @@
              (c-set-offset 'arglist-intro '+)))
 
 
-(set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular)
+(set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular)
+
+(if (string-equal (system-name) "caconym")
+    (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
 
 (if (string-equal (system-name) "psyduck")
-  (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
+    (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
 
 ;(setq backup-directory-alist `(("." . "~/.cache/emacs/backups")))
 ;(setq auto-save-file-name-transforms `(("." "~/.cache/emacs/autosaves/" t)))
