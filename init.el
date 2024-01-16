@@ -11,6 +11,7 @@
 (setq-default cursor-in-non-selected-windows nil)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 
 (setq js-indent-level 2)
 (setq-default indent-tabs-mode nil)
