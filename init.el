@@ -19,13 +19,13 @@
 
 ; https://lists.gnu.org/archive/html/help-gnu-emacs/2011-04/msg00262.html
 (add-hook 'java-mode-hook
-          '(lambda ()
-             "Treat Java 1.5 @-style annotations as comments."
-             (setq c-comment-start-regexp 
-                   "\\(@\\|/\\(/\\|[*][*]?\\)\\)")
-             (modify-syntax-entry ?@ "< b"
-                                  java-mode-syntax-table)
-             (c-set-offset 'arglist-intro '+)))
+          #'(lambda ()
+              "Treat Java 1.5 @-style annotations as comments."
+              (setq c-comment-start-regexp 
+                    "\\(@\\|/\\(/\\|[*][*]?\\)\\)")
+              (modify-syntax-entry ?@ "< b"
+                                   java-mode-syntax-table)
+              (c-set-offset 'arglist-intro '+)))
 
 
 (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular)
@@ -36,8 +36,11 @@
 (if (string-equal (system-name) "psyduck")
     (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
 
-;(setq backup-directory-alist `(("." . "~/.cache/emacs/backups")))
-;(setq auto-save-file-name-transforms `(("." "~/.cache/emacs/autosaves/" t)))
+(if (string-equal (system-name) "zoologist")
+    (set-face-attribute 'default nil :font "Hack" :height 180 :weight 'regular))
+
+                                        ;(setq backup-directory-alist `(("." . "~/.cache/emacs/backups")))
+                                        ;(setq auto-save-file-name-transforms `(("." "~/.cache/emacs/autosaves/" t)))
 
 (setq create-lockfiles nil)
 
