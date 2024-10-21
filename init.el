@@ -4,6 +4,7 @@
       sentence-end-double-space nil)
 
 (tool-bar-mode -1)
+(global-auto-revert-mode 1) 
 
 (setq user-full-name "Nat Tuck"
       user-mail-address "nat@ferrus.net")
