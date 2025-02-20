@@ -4,7 +4,7 @@
       sentence-end-double-space nil)
 
 (tool-bar-mode -1)
-(global-auto-revert-mode)
+(global-auto-revert-mode 1) 
 
 (setq user-full-name "Nat Tuck"
       user-mail-address "nat@ferrus.net")
@@ -13,6 +13,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 
 (setq js-indent-level 2)
 (setq-default indent-tabs-mode nil)
@@ -37,13 +38,19 @@
               ))
 
 
-(set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular)
+(set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular)
+
+(if (string-equal (system-name) "caconym")
+    (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
 
 (if (string-equal (system-name) "psyduck")
-  (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
+    (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
 
-;(setq backup-directory-alist `(("." . "~/.cache/emacs/backups")))
-;(setq auto-save-file-name-transforms `(("." "~/.cache/emacs/autosaves/" t)))
+(if (string-equal (system-name) "zoologist")
+    (set-face-attribute 'default nil :font "Hack" :height 180 :weight 'regular))
+
+                                        ;(setq backup-directory-alist `(("." . "~/.cache/emacs/backups")))
+                                        ;(setq auto-save-file-name-transforms `(("." "~/.cache/emacs/autosaves/" t)))
 
 (setq create-lockfiles nil)
 
