@@ -4,6 +4,7 @@
       sentence-end-double-space nil)
 
 (tool-bar-mode -1)
+(global-auto-revert-mode)
 
 (setq user-full-name "Nat Tuck"
       user-mail-address "nat@ferrus.net")
@@ -11,20 +12,29 @@
 (setq-default cursor-in-non-selected-windows nil)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-jsx-mode))
 
 (setq js-indent-level 2)
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 4) 
+(setq-default tab-width 4)
 
 ; https://lists.gnu.org/archive/html/help-gnu-emacs/2011-04/msg00262.html
 (add-hook 'java-mode-hook
-          '(lambda ()
+          #'(lambda ()
              "Treat Java 1.5 @-style annotations as comments."
              (setq c-comment-start-regexp 
                    "\\(@\\|/\\(/\\|[*][*]?\\)\\)")
              (modify-syntax-entry ?@ "< b"
                                   java-mode-syntax-table)
              (c-set-offset 'arglist-intro '+)))
+
+(add-hook 'c-mode-common-hook
+          #'(lambda()
+              (setq c-basic-offset 4)
+              (setq c-indent-level 4)
+              (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+              (setq tab-width 4)
+              ))
 
 
 (set-face-attribute 'default nil :font "Hack" :height 160 :weight 'regular)
@@ -361,6 +371,10 @@
 (use-package elixir-ts-mode)
 
 (use-package kotlin-ts-mode)
+
+(use-package nftables-mode)
+
+(use-package rust-ts-mode)
 
 ;:(use-package tramp)
 

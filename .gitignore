@@ -4,6 +4,8 @@ straight/
 tree-sitter/
 var/
 tmp/
+eln-cache/
+elpa/
 
 *~
 .#*
