@@ -11,11 +11,14 @@
 (setq-default cursor-in-non-selected-windows nil)
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.mjs\\'" . js-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 
 (setq js-indent-level 2)
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 4) 
+(setq-default tab-width 4)
+
+(global-auto-revert-mode 1)
 
 ; https://lists.gnu.org/archive/html/help-gnu-emacs/2011-04/msg00262.html
 (add-hook 'java-mode-hook
@@ -37,7 +40,7 @@
     (set-face-attribute 'default nil :font "Hack" :height 140 :weight 'regular))
 
 (if (string-equal (system-name) "zoologist")
-    (set-face-attribute 'default nil :font "Hack" :height 180 :weight 'regular))
+    (set-face-attribute 'default nil :font "Hack" :height 200 :weight 'regular))
 
                                         ;(setq backup-directory-alist `(("." . "~/.cache/emacs/backups")))
                                         ;(setq auto-save-file-name-transforms `(("." "~/.cache/emacs/autosaves/" t)))
